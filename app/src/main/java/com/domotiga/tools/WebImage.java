@@ -17,7 +17,6 @@ public abstract class WebImage {
      InputStream in = null;       
         try {
             in = OpenHttpConnection(URL);
-// Est-il nécessaire d'utiliser l'option ?            
 //            BitmapFactory.Options options;
 //            options = new BitmapFactory.Options();
 //            options.inSampleSize = 1;   

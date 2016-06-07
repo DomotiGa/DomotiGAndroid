@@ -129,7 +129,6 @@ public class MainActivity extends Activity {
 	                */
                 }
                 
-                
                 client = XMLRPC.getClient(this);
                 if (client != null) 
                 {

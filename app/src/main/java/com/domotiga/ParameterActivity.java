@@ -51,7 +51,7 @@ public class ParameterActivity extends Activity {
 			TextView tv = (TextView) findViewById(R.id.ServerURL);
 			tv.setText(Settings.getParamString(this, Settings.PREFS_URL, Settings.DEFAULT_URL));
 			
-			//on récupère le liste des devices
+			// get device list
 			String[] devices;
 			client = XMLRPC.getClient(this);
 			
@@ -84,7 +84,6 @@ public class ParameterActivity extends Activity {
 		    spinner1.setAdapter(spinnerArrayAdapter);
 		    int position;		    
 		    //if (client!=null) {
-		    	//on recherche l'entrée paramétrée		    
 			    String intTemp=Settings.getParamString(this, Settings.PREFS_INT_TEMP, "");
 			    position=0;
 			    for (int i=0;i<devices.length;i++) {

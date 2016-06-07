@@ -31,9 +31,8 @@ public abstract class XMLRPC {
 		String SSHRemoteIp = url.substring(url.lastIndexOf("/")+1,url.lastIndexOf(":"));	
 		
 		URI uri ;
-		 if( c == null ) {
+		if( c == null ) {
 			 if (UseSSH){
-			
 				 uri = URI.create("http://127.0.0.1:"+SSHTunnelPort);
 				 c=new XMLRPCClientSSH(uri, UseSSH, SSHIp, SSHPort, SSHUser, SSHPass, SSHTunnelPort, SSHRemoteIp);
 			 } else {
@@ -42,19 +41,9 @@ public abstract class XMLRPC {
 			 }
 			 //System.out.println("Create new instance XMLRPCSSH");
 			 //System.out.println("With Param : "+uri+","+UseSSH+","+SSHIp+","+SSHPort+","+SSHUser+","+SSHTunnelPort+","+SSHRemoteIp);
-		 }	else {
+		} else {
 			 //System.out.println("Reuse instance XMLRPCSSH");
-		 }
-			try {
-				
-					c.call("system.hostname");
-				
-				return c;
-			} catch (XMLRPCException e) {
-				//System.out.println("XMLRPC  : "+e.getMessage());
-				Toast.makeText(activity, e.getMessage(), Toast.LENGTH_LONG).show();
-				return null;
-			}
-		
+		}
+		return c;
 	}
 }
